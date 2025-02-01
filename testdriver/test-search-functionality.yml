@@ -1,0 +1,34 @@
+version: 4.1.58
+session: 679e41a1cf76c5e721e20a5c
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: hover-text
+        text: Search
+        description: search bar in the YouTube page
+        action: click
+  - prompt: Click on the search bar.
+    commands:
+      - command: hover-text
+        text: Search
+        description: search bar in the YouTube page
+        action: click
+  - prompt: Type a search query.
+    commands:
+      - command: hover-text
+        text: Search
+        description: search bar in the YouTube page
+        action: click
+      - command: type
+        text: funny cat videos
+  - prompt: Press enter.
+    commands:
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: >-
+      Assert that search results are displayed.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: search results for "funny cat videos" are displayed
