@@ -1,0 +1,17 @@
+version: 4.1.58
+session: 679e41a2cf76c5e721e20a5e
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Click on the "Trending" link in the Explore section.
+    commands:
+      - command: hover-text
+        text: Trending
+        description: link in the Explore section
+        action: click
+  - prompt: >-
+      Assert that the trending page loads successfully.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: the trending page is loaded with the "Trending" header visible
