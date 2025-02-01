@@ -1,0 +1,51 @@
+version: 4.1.58
+session: 679e41accf76c5e721e20a67
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Scroll to the bottom of the page.
+    commands:
+      - command: scroll
+        direction: down
+        method: keyboard
+        amount: 300
+      - command: scroll
+        direction: down
+        method: keyboard
+        amount: 300
+      - command: scroll
+        direction: down
+        method: keyboard
+        amount: 300
+      - command: scroll
+        direction: down
+        method: keyboard
+        amount: 300
+  - prompt: Scroll to the bottom of the page.
+    commands:
+      - command: scroll-until-text
+        text: Copyright
+        direction: down
+        method: keyboard
+  - prompt: >-
+      Assert that the "Contact us" link is visible and working.  # Use the
+      content of the file from the environment
+    commands:
+      - command: hover-text
+        text: Contact us
+        description: link in the footer
+        action: hover
+      - command: assert
+        expect: the "Contact us" link is visible
+  - prompt: >-
+      Assert that the "Contact us" link is visible and working.  # Use the
+      content of the file from the environment
+    commands:
+      - command: hover-text
+        text: Contact us
+        description: link in the footer
+        action: click
+      - command: assert
+        expect: the "Contact us" page is loaded
