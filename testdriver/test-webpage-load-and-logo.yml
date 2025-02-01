@@ -1,0 +1,19 @@
+version: 4.1.58
+session: 679e41a7cf76c5e721e20a62
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: hover-text
+        text: Search
+        description: search bar in the browser
+        action: click
+  - prompt: Assert that the webpage loads successfully.
+    commands:
+      - command: assert
+        expect: the YouTube logo is visible
+  - prompt: >-
+      Assert that the YouTube logo is visible.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: the YouTube logo is visible
